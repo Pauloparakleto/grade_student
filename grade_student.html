@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grade students</title>
+  <meta charset="utf-8"/>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+    let maxStudents = 60; //Max number of students to be tested by the function validity.rangeOverflow
+    let minStudents = 1; //Min number of students to be typed.
+    let studentNumberX = 1;
+    let arrayGrade = [studentNumberX]; //creat a array whose name is arrayGrade.
+    let roundedGrade = [];
+    
+    arrayGrade[0] = prompt('How many students does you have,'+
+        ' Professor Sam?', ''); //Show a message and store the input argument into 'numberOfStudents'.
+    Number(arrayGrade);
+
+    arrayGrade[0] = parseInt(arrayGrade[0], 10); //Change the instring argument above to a integer.
+    
+    // (1 < number of students < 100) Number of students validation: the input format have to stay between 1 and 100, inclusively.
+   
+    if(arrayGrade[0] < minStudents || arrayGrade[0] > maxStudents || isNaN(arrayGrade[0])){
+        console.log('You must type a number of students from ' + minStudents + ' to ' + maxStudents + ' only.');
+        alert('You must type a number of students from ' + minStudents + ' to ' + maxStudents + ' only.');
+          
+        } else{
+    
+    console.log('You have ' + arrayGrade[0] + ' students.'); 
+    
+    for(i = 0; i < arrayGrade[0]; i++){//While the counter 'i' is less than the number of students, keep asking about the grade students.
+        
+        studentNumberX = arrayGrade.length; //Turn the number of the student equal to array(arrayGrade) lenght. 
+        let grade =  prompt('Professor Sam, type the grade of the student number ' + studentNumberX + ':');
+        grade = Number(grade);
+        arrayGrade.push(grade); //Add a new element to 'arrayGrade'. 
+       console.log('The grade of the student ' + studentNumberX + ' is: ' + grade + 
+       '. And the rounded grade is' + roundedGrade);
+      
+    }
+    console.log('\n');
+    console.log('You have typed all students grade.');
+    console.log(arrayGrade);
+
+    function roundGrade(){
+      /*Rules to round the grade values in arrayGrade (or not)
+      >> If the difference between the and the next multiple of 5 is 
+      less than 3, round grade up to the next multiple of 5.
+      >> If the value of grade is less than 38, no rounding occurs 
+      as the result will still be a failing grade. */
+    
+
+    }
+  }
+    
+      
+   
+  </script>
+</body>
+</html>
